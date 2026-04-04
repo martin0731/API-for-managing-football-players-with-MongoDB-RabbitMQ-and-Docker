@@ -1,0 +1,32 @@
+services:
+  api:
+    build: .
+    container_name: tarea_1_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - rabbitmq
+    environment:
+      - MONGO_URL=mongodb://db:27017/
+      - RABBIT_HOST=rabbitmq
+
+  db:
+    image: mongo:latest
+    container_name: tarea_1_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: tarea_1_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  mongo_data:

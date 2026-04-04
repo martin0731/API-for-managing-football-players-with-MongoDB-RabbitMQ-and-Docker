@@ -8,7 +8,6 @@ __pycache__/
 .ruff_cache/
 
 terraform/
-docker/
 
 .terraform/
 *.tfstate
