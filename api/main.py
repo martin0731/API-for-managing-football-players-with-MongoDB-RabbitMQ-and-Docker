@@ -10,6 +10,13 @@ import os
 
 app = FastAPI(title="Futbol API Completa")
 
+
+@app.get("/health")
+async def health():
+    """Para health checks del ALB (debe responder 200)."""
+    return {"status": "ok"}
+
+
 # conexiones
 
 MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017/")
