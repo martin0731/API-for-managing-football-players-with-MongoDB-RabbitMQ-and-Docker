@@ -11,6 +11,11 @@ import os
 app = FastAPI(title="Futbol API Completa")
 
 
+@app.get("/")
+async def root():
+    return {"status": "ok", "docs": "/docs"}
+
+
 @app.get("/health")
 async def health():
     """Para health checks del ALB (debe responder 200)."""
