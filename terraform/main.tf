@@ -1,6 +1,4 @@
-# ------------------------------------------
 # EC2 para la API (2 instancias)
-# ------------------------------------------
 resource "aws_instance" "api" {
   count                  = 2
   ami                    = var.ami_id
@@ -19,9 +17,7 @@ resource "aws_instance" "api" {
   }
 }
 
-# ------------------------------------------
 # EC2 para MongoDB
-# ------------------------------------------
 resource "aws_instance" "mongodb" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
@@ -36,9 +32,7 @@ resource "aws_instance" "mongodb" {
   tags = { Name = "MongoDB-Server" }
 }
 
-# ------------------------------------------
 # EC2 para RabbitMQ
-# ------------------------------------------
 resource "aws_instance" "rabbitmq" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
@@ -53,9 +47,7 @@ resource "aws_instance" "rabbitmq" {
   tags = { Name = "RabbitMQ-Server" }
 }
 
-# ------------------------------------------
 # EC2 para el Worker
-# ------------------------------------------
 resource "aws_instance" "worker" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
