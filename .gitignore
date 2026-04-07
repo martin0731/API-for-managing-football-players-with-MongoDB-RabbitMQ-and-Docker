@@ -1,4 +1,4 @@
-# === Python ===
+# py
 .venv/
 venv/
 __pycache__/
@@ -6,20 +6,19 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 
-# === Variables de Entorno (Seguridad) ===
+# variables de entorno
 .env
 .env.*
 
-# === Terraform (Infraestructura) ===
-# Ignorar la carpeta de binarios (se genera con init)
+# terraform
 .terraform/
 
-# Ignorar archivos de estado (contienen datos sensibles y secretos)
+# archivos de estado
 *.tfstate
 *.tfstate.backup
 *.tfplan
 
-# Ignorar archivos de variables locales
+# variables locales
 *.tfvars
 *.tfvars.json
 
