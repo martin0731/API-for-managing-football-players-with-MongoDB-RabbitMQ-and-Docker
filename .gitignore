@@ -1,16 +1,27 @@
+# === Python ===
 .venv/
+venv/
 __pycache__/
 *.pyc
-.env
-
 .pytest_cache/
-
 .ruff_cache/
 
-terraform/
+# === Variables de Entorno (Seguridad) ===
+.env
+.env.*
 
+# === Terraform (Infraestructura) ===
+# Ignorar la carpeta de binarios (se genera con init)
 .terraform/
-*.tfstate
-*.tfstate.backup 
 
+# Ignorar archivos de estado (contienen datos sensibles y secretos)
+*.tfstate
+*.tfstate.backup
+*.tfplan
+
+# Ignorar archivos de variables locales
+*.tfvars
+*.tfvars.json
+
+# macOS
 .DS_Store
